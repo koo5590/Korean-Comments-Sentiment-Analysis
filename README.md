@@ -16,7 +16,7 @@ KC BERT + 네이버 영화 리뷰 데이터 finetuning 모델
 학습 방법
 
     python main.py \
-    --do_train --model_1\
+    --do_train --model_1 \
     --train_data_dir movie_train
 
 Model 2 : 스포츠 댓글 분류기
@@ -35,13 +35,13 @@ KC BERT + LSTM + 네이버 영화 리뷰 데이터 finetuning + 스포츠 댓글
 1. 네이버 영화 리뷰로 먼저 finetuning 한다.
 
         python main.py \
-        --do_train --model_2\
+        --do_train --model_2 \
         --train_data_dir movie_train
 
 2.  1.의 모델에 스포츠 댓글 데이터로 finetuning 한다.
         
         python main.py \
-        --do_train --model_2 --second_finetuning\
+        --do_train --model_2 --second_finetuning \
         --test_model_dir ./models/model_sports.pt \
         --train_data_dir sports_train \
         --num_train_epochs 3 \
@@ -62,13 +62,13 @@ KC BERT + 네이버 영화 리뷰 데이터 finetuning + TV프로그램 댓글 f
 1. 네이버 영화 리뷰로 먼저 finetuning 한다.
 
         python main.py \
-        --do_train --model_3\
+        --do_train --model_3 \
         --train_data_dir movie_train
 
 2.  1.의 모델에 TV프로그램 댓글 데이터로 finetuning 한다. 
         
         python main.py \
-        --do_train --model_3\
+        --do_train --model_3 \
         --test_model_dir ./models \
         --train_data_dir tv_train \
         --num_train_epochs 3 \
@@ -92,7 +92,7 @@ Model 4 : 라벨링 데이터 없이 스포츠 댓글 긍부정 분류기 학습
 아래 코드로 도메인 분류기 / 스포츠 댓글과 비슷한 영화 리뷰 선별 / 긍부정 분류기 학습이 한번에 수행된다.
 
         python main.py \
-        --do_train --model_4\
+        --do_train --model_4 \
         --train_data_dir movie_train
 
 실시간 테스트
@@ -102,30 +102,30 @@ Model 4 : 라벨링 데이터 없이 스포츠 댓글 긍부정 분류기 학습
 1. Model 1 : 영화 테스트
 
         python main.py \
-        --do_interactive --model_1\
-        --test_model_dir ./models/movie\
+        --do_interactive --model_1 \
+        --test_model_dir ./models/movie \
         --test_data_dir movie_test
 
 
 2. Model 2 : 스포츠 테스트
 
         python main.py \
-        --do_interactive --model_2\
-        --test_model_dir ./models/sports/model_sports.pt\
+        --do_interactive --model_2 \
+        --test_model_dir ./models/sports/model_sports.pt \
         --test_data_dir sports_test
 
 3. Model 3 : TV프로그램 테스트
 
         python main.py \
-        --do_interactive --model_3\
-        --test_model_dir ./models/tv\
+        --do_interactive --model_3 \
+        --test_model_dir ./models/tv \
         --test_data_dir tv_test
 
 4. Model 4 : 스포츠 테스트
 
         python main.py \
-        --do_interactive --model_4\
-        --test_model_dir ./models/no_labeling\
+        --do_interactive --model_4 \
+        --test_model_dir ./models/no_labeling \
         --test_data_dir sports_test
 
 결과
@@ -140,3 +140,13 @@ Model 4
 |Baseline (no finetuning)|Model 1 (영화)|Model 4 (no label/스포츠)|
 |:------:|:---:|:---:|
 |0.501|0.757|<span style="color:red">**0.792**</span>|
+
+
+
+학습 모델 다운로드 링크
+-----
+모델 용량이 커 github 업로드가 불가하여 구글 드라이브 업로드 후 공유합니다.
+
+도커 환경에 모델을 넣었으므로 도커 컨테이너 작동 시 별도의 모델 다운로드 없이 테스트 해보실 수 있습니다.
+
+https://drive.google.com/drive/folders/1AnQS4XrQa65UjVNAm_swF_y-lyTZ-lDf?usp=sharing
