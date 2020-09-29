@@ -11,7 +11,7 @@ new_model_4 추가. 1차 실험의 model 4에서 learning rate 등 하이퍼파�
 테스트 파일 성능 확인 방법
 
     python main.py \
-    --do_test --new_model_4\
+    --do_test --new_model_4 \
     --test_model_dir ./models/new_model_4 \
     --test_data_dir sports_test
 
