@@ -151,9 +151,9 @@ Model 1 ~ 3
 
 
 Model 4
-|Baseline (no finetuning)|Model 1 (영화)|Model 4 (no label/스포츠)|
-|:------:|:---:|:---:|
-|0.501|0.757|<span style="color:red">**0.792**</span>|
+|Baseline (no finetuning)|Model 1 (영화)|Model 4 (no label/스포츠)|new_model_4|
+|:------:|:---:|:---:|:---:|
+|0.501|0.757|<span style="color:red">**0.792**</span>|<span style="color:red">**0.798**</span>|
 
 
 
