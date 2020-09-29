@@ -4,6 +4,18 @@
 
 ***docker image 다운로드 링크*** 는 제출한 **보고서 마지막 페이지**에 있습니다. 실행방법 또한 보고서에 기재하였습니다. 다운로드 후 아래 방법을 따라 테스트 성능과 실시간 테스트를 확인해주시길 바랍니다. 
 
+2차 경진대회 추가 사항
+------
+new_model_4 추가. 1차 실험의 model 4에서 learning rate 등 하이퍼파라미터 조정 실험.
+
+테스트 파일 성능 확인 방법
+
+    python main.py \
+    --do_test --new_model_4\
+    --test_model_dir ./models/new_model_4 \
+    --test_data_dir sports_test
+
+
 Model 1 : 영화 리뷰 분류기
 --------
 KC BERT + 네이버 영화 리뷰 데이터 finetuning 모델
