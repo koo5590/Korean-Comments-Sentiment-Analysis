@@ -59,7 +59,7 @@ class SentimentClassifier(nn.Module):
         self.bert = AutoModel.from_pretrained(args.bert_type)
 
         # input_d, hidden_d, out_d, num_layers, dropout
-        self.gru = LSTMModel(768, 128, 2, 2, 0.2)
+        self.lstm = LSTMModel(768, 128, 2, 2, 0.2)
 
         # freeze layers if necessary
         if args.freeze:
@@ -89,7 +89,7 @@ class SentimentClassifier(nn.Module):
             output_hidden_states=True,
             output_attentions=output_attentions)
 
-        logits = self.gru(outputs[0])
+        logits = self.lstm(outputs[0])
         
         if labels == None:
             return (logits,)
